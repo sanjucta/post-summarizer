@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/plugin-boilerplate",
+	"version": "0.1.0",
+	"title": "Plugin Boilerplate",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Block to summarize posts using OpenAI's GPT-3.5 Turbo model",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"summaryText": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "plugin-boilerplate",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
