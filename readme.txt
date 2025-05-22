@@ -1,55 +1,28 @@
-=== Plugin Boilerplate ===
-Contributors:      The WordPress Contributors
-Tags:              block
+=== Post Summarizer ===
+Contributors:      Sanjucta Ghose
+Tags:              block, summary
 Tested up to:      6.7
 Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Example block scaffolded with Create Block tool.
+Plugin that adds a block to generate a summary for a post
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+Plugin that adds a block to generate a summary for a post. This is essentially a fun project to help me explore writing custom Gutenberg blocks
+while playing around with the OpenAPI Chat Completion API
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+== Usage ==
 
-== Installation ==
+You need to add your OpenAPI API key to your wp-config.php file as the value of the constant - VIRIDIANSG_API_KEY
 
-This section describes how to install the plugin and get it working.
+I've used @wordpress/env to set up a local dev environment. If you want to spin up a local env quickly to see how the plugin works this is what you need to do :
 
-e.g.
+- The project contains a .wp-env.json file.
+- Create a copy of the file and rename it to .wp-env.override.json.
+- Update VIRIDIANSG_API_KEY to your OpenAPI API key.
+- Run npm install
+- Run composer install
+- To start a local WordPress install run npm run env:start
 
-1. Upload the plugin files to the `/wp-content/plugins/plugin-boilerplate` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
-
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
-
-== Changelog ==
-
-= 0.1.0 =
-* Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.

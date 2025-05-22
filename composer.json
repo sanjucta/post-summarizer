@@ -11,5 +11,10 @@
 	"scripts": {
 		"lint": "phpcs",
 		"lint:fix": "phpcbf"
+	},
+	"autoload": {
+		"psr-4": {
+			"ViridianSG\\": "inc/"
+		}
 	}
 }

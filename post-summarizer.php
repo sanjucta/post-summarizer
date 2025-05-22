@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Plugin Boilerplate
+ * Plugin Name:       Post Summarizer
  * Description:       Block to summarize posts using OpenAI's GPT-3.5 Turbo model.
  * Version:           0.1.0
  * Requires at least: 6.7
@@ -8,7 +8,7 @@
  * Author:            Sanjucta Ghose
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       plugin-boilerplate
+ * Text Domain:       vsg-summarizer
  *
  * @package CreateBlock
  */
@@ -16,6 +16,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+// Load the Composer autoloader.
+require_once __DIR__ . '/vendor/autoload.php';
+
 /**
  * Registers the block using a `blocks-manifest.php` file, which improves the performance of block type registration.
  * Behind the scenes, it also registers all assets so they can be enqueued
@@ -24,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://make.wordpress.org/core/2025/03/13/more-efficient-block-type-registration-in-6-8/
  * @see https://make.wordpress.org/core/2024/10/17/new-block-type-registration-apis-to-improve-performance-in-wordpress-6-7/
  */
-function create_block_plugin_boilerplate_block_init() {
+function vsg_post_summarizer_block_init() {
 	/**
 	 * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
 	 * based on the registered block metadata.
@@ -56,4 +60,9 @@ function create_block_plugin_boilerplate_block_init() {
 		register_block_type( __DIR__ . "/build/{$block_type}" );
 	}
 }
-add_action( 'init', 'create_block_plugin_boilerplate_block_init' );
+add_action( 'init', 'vsg_post_summarizer_block_init' );
+
+/**
+ * Instantiate the API class that registers rest API endpoints.
+ */
+\ViridianSG\API::get_instance()->init();

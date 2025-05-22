@@ -27,3 +27,5 @@ vendor/
 # dotenv environment variables file
 .env*
 
+# Local env override for @wordpress/env
+.wp-env.override.json

@@ -3,7 +3,10 @@
     <description>PHPCS ruleset for WordPress plugin development</description>
 
     <!-- Use WordPress Coding Standard -->
-    <rule ref="WordPress" />
+     <rule ref="WordPress">
+        <!-- PSR4 -->
+        <exclude name="WordPress.Files.FileName" />
+    </rule>
 
     <!-- Paths to scan -->
     <file>./</file>
